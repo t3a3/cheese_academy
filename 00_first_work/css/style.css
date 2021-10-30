@@ -1,0 +1,488 @@
+
+/*全体共通
+最初から設定してあるので特に変更
+しなくても大丈夫です♪
+-----------------*/
+body{
+	font-family: Roboto, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+	line-height: 1.75;
+	font-size: 16px;
+	width: 960px;
+	margin: 0 auto;
+}
+/*パディングをサイズ内側にする処理*/
+* {
+	padding:0;
+	margin:0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*ーーーーーーーーーーー*/
+/*この下から記述*/
+/*ーーーーーーーーーーー*/
+.wrapper{
+	max-width: 960px;
+	margin: 0 auto;
+}
+/*TOP*/
+.title_box{
+	background: url(../img/ffmainbg.png);
+	background-size: cover;
+	background-position: center;
+	height: 400px;
+	color: lightyellow;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.title_box h1{
+	font-size: 48px;
+	text-shadow: 0.02em 0.02em 0.02em rgba(0,0,0,1);
+}
+.title_box p{
+	font-size: 36px;
+	text-shadow: 0.02em 0.02em 0.02em rgba(0,0,0,1);
+}
+/*TOP*/
+
+/*heder*/
+.header{
+	margin-bottom: 120px;
+}
+.header-wrapper{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 80px;
+	width: 100%;
+}
+.header-wrapper img{
+	margin: 0 10px;
+}
+.nav-list{
+	font-style: 21px;
+}
+nav{
+	border-bottom: 1px solid #ccc;
+}
+nav ul{
+display: table;
+margin: 0 auto;
+padding: 0;
+width: 80%;
+text-align: center;
+}
+nav ul li{
+display: table-cell;
+min-width: 50px;
+border-right: 1px solid #ccc;
+}
+nav ul li:first-child{
+border-left: 1px solid #ccc;
+}
+nav ul li a{
+display: block;
+width: 100%;
+padding: 21px 0;
+text-decoration: none;
+color: #aaa;
+}
+nav ul li a:hover{
+background-color:lightyellow;
+border-bottom: 9px solid lightskyblue;
+}
+nav ul li.current{
+font-weight: bold;
+}
+nav ul li.current a{
+border-bottom: 5px solid #00B0F0;
+color: #00B0F0;
+}
+.nav-item{
+	margin: 0 0 0 48px;
+}
+.nav-item>a{
+	color: black;
+	text-transform: uppercase;
+}
+/*header*/
+
+/*about*/
+.about{
+	margin-bottom: 80px;
+}
+.about__title{
+	text-align: center;
+	color: #ffd61a;
+	margin: 0 0 24px;
+	font-size: 24px;
+}
+
+.about__subtitle{
+	text-align: center;
+	font-size: 20px;
+	margin: 0 0 64px;
+}
+.about__text{
+	text-align: center;
+	margin: 0 0 40px;
+}
+.ffxiv{
+	text-align: center;
+	margin: 0 0 40px;
+	background-image: url(../img/ffxiv_logo.png);
+	background-size: 20%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.ffxiv h3{
+	margin: 40px 0 24px;
+}
+.ffxiv_text{
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.932);
+}
+.video{
+	text-align: center;
+}
+/*about*/
+
+/*流れる画像*
+右から左へ
+----------------------------*/
+@keyframes infinity-scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/*
+IE11対策
+----------------------------*/
+_:-ms-lang(x)::-ms-backdrop,
+.d-demo {
+  display: -ms-grid;
+  overflow: hidden;
+}
+/*----------------------------*/
+
+.d-demo__wrap {
+  display: flex;
+  overflow: hidden;
+}
+
+.d-demo__list {
+  display: flex;
+  list-style: none;
+}
+
+.d-demo__list--left{
+animation :infinity-scroll-left 95s infinite linear 0.5s both;
+}
+
+.d-demo__item {
+  width: calc(100vw / 6);
+}
+.d-demo__item > img{
+   width: 100%;
+}
+.d-demo__wrap:hover .d-demo__list--left{
+  animation-play-state: paused;
+}
+/*流れる画像*/
+
+/*course*/
+.course{
+	margin-bottom: 64px;
+}
+.course__title{
+	text-align: center;
+	margin: 0 0 24px;
+	font-size: 24px;
+	color: #ffd61a;
+}
+.course__subtitle{
+	margin: 0 0 64px;
+	text-align: center;
+}
+.course__box{
+	display: flex;
+	background-color: #fafafa;
+}
+.course_img_box{
+	width: 50%;
+}
+.course_img_box img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.course__text{
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.course__text div{
+	width: 80%;
+}
+.course__text div h3{
+	font-size: 21px;
+	margin: 0 0 20px;
+}
+/*course*/
+
+/*news*/
+.news{
+	padding: 0 0 56px;
+	margin: auto;
+	margin-bottom: 48px;
+}
+.news__title{
+	text-align: center;
+	color: #ffd61a;
+	margin-bottom: 24px;
+	font-size: 24px;
+}
+.news__subtitle{
+	text-align: center;
+	margin-bottom: 64px;
+}
+.news_list{
+	display: flex;
+}
+.news_box{
+	width: 33.333%;
+}
+.news_img{
+	margin: 0 0 32px;
+}
+.news_img img{
+	width: 95%;
+}
+.news_text{
+	margin: 0 5px 24px 0;
+}
+.news_date{
+	margin: 0 0 24px;
+}
+.btn{
+	display: block;
+	width: 300px;
+	margin: auto;	
+	padding: 20px 0;
+	font-size: 20px;
+	color: #fff;
+	background-color: #ffd61a;
+	text-align: center;
+	margin-top: 56px;
+}
+/*news*/
+
+/*access*/
+.access_box{
+	background-color: #fafafa;
+	padding: 64px 0 80px;
+}
+.access h2{
+	margin-bottom: 24px;
+	color: #ffd61a;
+}
+.access p{
+	margin-bottom: 64px;
+}
+.access iframe{
+	margin-bottom: 64px;
+}
+.access_wrapper{
+	width: 680px;
+	margin: auto;
+}
+.access_information{
+	display: flex;
+	flex-wrap: wrap;
+}
+.access_title{
+	width: 150px;
+	padding: 0 0 24px;
+}
+.access_item{
+	width: 530px;
+}
+/*access*/
+
+/*contact*/
+.contact{
+	margin: 64px 0 64px;
+}
+.contact_wrapper{
+	width: 650px;
+	margin: auto;
+}
+.contact_text{
+	text-align: center;
+	margin-bottom: 80px;
+}
+.contact_text h2{
+	margin-bottom: 24px;
+	color: #ffd61a;
+}
+.contact_information{
+	display: flex;
+	flex-wrap: wrap;
+}
+.contact_title{
+	width: 130px;
+	margin-right: 20px;
+}
+.contact_item{
+	width: 500px;
+	margin-bottom: 30px;
+}
+.contact_item input[type="text"]{
+	width: 250px;
+	margin-bottom: 30px;
+}
+.form_text{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    max-width: 500px;
+}
+.contact_item textarea{
+  resize: none;
+  width:500px;
+  height:200px;
+}
+
+.checkbox{
+	box-sizing: 20px;
+	margin-right: 40px;
+}
+
+/* チェックボックス */
+
+/*contact*/
+/*footer*/
+.footer{
+	text-align: center;
+	background-color: #fafafa
+}
+/***追従するトップへ戻るボタン***/
+#page-top {
+    position: fixed;
+    right: 5px;
+    bottom: 50px;
+    height: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transform: rotate(90deg);
+    font-size: 90%;
+    line-height: 1.5rem;
+    color: #737373;
+    padding: 0 0 0 35px;
+    border-top: solid 1px;
+}
+#page-top::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 0px;
+    width: 15px;
+    border-top: solid 1px;
+    transform: rotate(35deg);
+    transform-origin: left top;
+}
+/***トップへ戻るボタンここまで***/
+
+
+/*テキストを中央揃え
+---------------------*/
+.text-center{
+ text-align: center;
+}
+
+/*フェードイン右左
+---------------------*/
+.fadein-left{
+  -webkit-transition: all .7s linear;
+  -o-transition: all .7s linear;
+  transition: all .7s linear;
+  -webkit-transform: translateX(-50px);
+  -moz-transform: translateX(-50px);
+  -ms-transform: translateX(-50px);
+  transform: translateX(-50px);
+  opacity: 0;
+}
+.fadein-right{
+  -webkit-transition: all .7s linear;
+  -o-transition: all .7s linear;
+  transition: all .7s linear;
+  -webkit-transform: translateX(50px);
+  -moz-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(50px);
+  opacity: 0;
+}
+.fadein-left.active{
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+}
+.fadein-right.active{
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/*左から右へ
+---------------------*/
+.text-fadein span{
+  display: inline-block;
+  position: relative;
+}
+.text-fadein span:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #fafafa;
+  -webkit-transition: all .5s linear;
+  -o-transition: all .5s linear;
+  transition: all .5s linear;
+}
+.text-fadein.active span:before {
+  width: 0%;
+}
+
+/*
+---------------------*/
+
+
+
+/*
+---------------------*/
+
+
+
+/*
+---------------------*/
